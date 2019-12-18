@@ -54,7 +54,6 @@ func variableShorter() {
 //byte rune(相当于char，在这里是32位)
 //float32 float64 complex64 complex128 复数 实部加虚部
 
-
 func euler() {
 	//欧拉公式 e^i*@(角度)=cos@+isin@
 	// |e^i*@|=1
@@ -65,104 +64,106 @@ func euler() {
 	//complex的实部和虚部都是浮点数字
 	fmt.Println(cmplx.Pow(math.E, 1i*math.Pi) + 1)
 	//e的多少次方
-	fmt.Println(cmplx.Exp(1i*math.Pi )+1)
-	fmt.Printf("%.3f",cmplx.Exp(1i*math.Pi )+1)
+	fmt.Println(cmplx.Exp(1i*math.Pi) + 1)
+	fmt.Printf("%.3f", cmplx.Exp(1i*math.Pi)+1)
 }
 
 func triangle() {
 	var a, b int = 3, 4
-	var c int =int(math.Sqrt(float64(a * a + b * b)))
+	var c int = int(math.Sqrt(float64(a*a + b*b)))
 	fmt.Println(c)
 }
-const filename  = "abc.text"
+
+const filename = "abc.text"
+
 func consts() {
 	//常量暂时不要大写
-	const filename  = "abc.text"
+	const filename = "abc.text"
 	//既可以做int 也可以float，文本替换,只有常量才可以
-	const a, b  = 3, 4
-	math.Sqrt(a * a + b * b)
+	const a, b = 3, 4
+	math.Sqrt(a*a + b*b)
 
-	const(
+	const (
 		aa = 3
 		bb = 4
 	)
 }
 
 func emums() {
-	const(
-		java = 1
-		python = 2
+	const (
+		java       = 1
+		python     = 2
 		javascript = 3
-		scala = 4
+		scala      = 4
 	)
 	//自增
-	const(
-		red = iota
+	const (
+		red    = iota
 		yeoolw
 		//跳值
 		_
 		blue
 	)
 	//b kb mb gb tb pb
-	const(
-		b = 1 << (10 * iota)
+	const (
+		b  = 1 << (10 * iota)
 		kb
 		mb
 		gb
 		tb
 		pb
 	)
-	fmt.Println(java,python,java,scala)
-	fmt.Println(red,yeoolw,blue)
-	fmt.Println(b,kb,mb,gb,tb,pb)
+	fmt.Println(java, python, java, scala)
+	fmt.Println(red, yeoolw, blue)
+	fmt.Println(b, kb, mb, gb, tb, pb)
 }
 
 func testif() {
-	byte , error:=ioutil.ReadFile("test")
-	if error != nil{
+	byte, error := ioutil.ReadFile("test")
+	if error != nil {
 		fmt.Println(error)
-	}else {
-		fmt.Printf("%s\n",byte)
+	} else {
+		fmt.Printf("%s\n", byte)
 	}
 
 }
 
 func testif2() {
-	if byte , error:=ioutil.ReadFile("test");error != nil{
+	if byte, error := ioutil.ReadFile("test"); error != nil {
 		fmt.Println(error)
-	}else {
-		fmt.Printf("%s\n",byte)
+	} else {
+		fmt.Printf("%s\n", byte)
 	}
 }
 
 func testSwitch(score int) string {
 	g := ""
 	//switch可以没有表达式
-	switch  {
-	case score<0 || score>100:
+	switch {
+	case score < 0 || score > 100:
 		//报错处理,后面代码不执行
-		panic(fmt.Sprintf("Wrong is %s",score))
-	case score<60:
-		g="F"
-	case score<90:
-		g="B"
+		panic(fmt.Sprintf("Wrong is %s", score))
+	case score < 60:
+		g = "F"
+	case score < 90:
+		g = "B"
 
 	}
 	return g;
-	
 }
 
 func testFor() int {
 	sum := 0;
-	for i := 1;i <= 100 ;i++  {
+	for i := 1; i <= 100; i++ {
 		sum += i
 	}
 	return sum;
 }
+
 //求整数的 二进制
 func convertToBinary(n int) string {
 	result := ""
-	for ; n > 0 ;n /= 2 {
+	for ; n > 0; n /= 2 {
 		//数字转换为字符串
 		lsb := n % 2
 		result = strconv.Itoa(lsb) + result
@@ -171,8 +172,8 @@ func convertToBinary(n int) string {
 }
 
 func priintFile(filename string) {
-	file, err :=os.Open(filename)
-	if err != nil{
+	file, err := os.Open(filename)
+	if err != nil {
 		panic(err)
 	}
 	bufio.NewScanner(file)
@@ -184,10 +185,18 @@ func priintFile(filename string) {
 		fmt.Println(scanner.Text())
 	}
 
-
 }
+
 //死循环
 func forever() {
+	//定义文本
+	text := `dsa""fsa"a
+     dsa
+            fsaf
+   asdg 
+
+`
+fmt.Println(text)
 	for {
 		fmt.Println("abc")
 	}
