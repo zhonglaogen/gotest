@@ -119,7 +119,7 @@ func emums() {
 }
 
 func testif() {
-	byte, error := ioutil.ReadFile("test")
+	byte, error := ioutil.ReadFile("test.txt")
 	if error != nil {
 		fmt.Println(error)
 	} else {
@@ -129,7 +129,7 @@ func testif() {
 }
 
 func testif2() {
-	if byte, error := ioutil.ReadFile("test"); error != nil {
+	if byte, error := ioutil.ReadFile("test.txt"); error != nil {
 		fmt.Println(error)
 	} else {
 		fmt.Printf("%s\n", byte)
@@ -220,7 +220,7 @@ func main() {
 	fmt.Println(testFor())
 	fmt.Println(convertToBinary(13))
 
-	priintFile("test")
+	priintFile("test.txt")
 
 	//forever()
 }

@@ -27,4 +27,8 @@ func main() {
 	for i := 0; i < 10; i++ {
 		fmt.Printf("0 + 1 + .. + %d = %d\n", i, a(i))
 	}
+	aa := adder2(0)
+	var s int
+	s, aa = aa(1)
+	fmt.Println(s)
 }
