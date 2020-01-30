@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"errors"
 )
 
 func tryRecover()  {
@@ -17,7 +18,7 @@ func tryRecover()  {
 			panic(r)
 		}
 	}()
-	//panic(errors.New("this is a error"))
+	panic(errors.New("this is a error"))
 }
 
 func main() {
