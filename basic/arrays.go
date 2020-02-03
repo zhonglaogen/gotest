@@ -24,7 +24,7 @@ func main() {
 	//这样必须赋值
 	arry2 := [5]int{2, 3, 4, 5, 6}
 	//编译器数几个值
-	arry3 := [...]int{2, 3, 4, 5, 7}
+	  arry3 := [...]int{2, 3, 4, 5, 7}
 
 	var grid [2][3]int
 	fmt.Println(arry, arry2, arry3, grid)

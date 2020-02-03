@@ -209,6 +209,7 @@ func main() {
 	//variableTypeDeduction()
 	//variableShorter()
 
+	fmt.Println(cmplx.Pow(3, 2) + 1)
 	euler()
 	triangle()
 	emums()
