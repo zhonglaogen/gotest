@@ -1,0 +1,38 @@
+切片。map。chan都是指针类型，要用make来构建
+for的遍历方式
+for i := 1; i <= 100; i++ {
+		sum += i
+	}
+	for scanner.Scan() {
+    		fmt.Println(scanner.Text())
+    	}
+    	for {
+        		fmt.Println("abc")
+        	}
+
+        for _, v := range arry3 {
+        		fmt.Println(v)
+        	}
+对象.(类型) 强制类型转换
+new(tree.Node)创建对象
+tree.Node{Value:3}
+
+go的面向对象 很智能，面向对象的方法如果是指针就传指针，如果是值就找到指针引用的值传过去
+包名下的所有文件都要同名，但是可以不和包名一样
+扩展已有的类型，组合和定义别名
+
+切片就是指针（chan，map，interface）
+new返回的是指针，不用初始化，但是不常用，通常都是 a:={}的形式
+make只是用与切片map，chan
+
+测试命令
+命令的方式： cd到测试文件的包  cgo test .
+//在命令行进入这个文件加 go run xx.go 运行程序 go  run -race xx.go 检测数据访问冲突
+代码覆盖率go test -coverprofile=c.out
+less c.out 查看文件，发现看不懂
+就可以看的懂了go tool cover -html=c.out
+性能测试 go test -bench .
+性能调优go test -bench . -cpuprofile cpu.out
+查看cpu.out的方式：go tool pprof cpu.out
+此时会出现一个交互式面板，输入help，web
+框越大用的时间越久，想看svg要装grgphviz， www.graphviz.org/download

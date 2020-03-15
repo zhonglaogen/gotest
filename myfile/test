@@ -1,0 +1,28 @@
+strconv.Itoa(lsb) 整数转换为字符串
+cmplx.Pow(3, 2) + 1 复数的幂表达形式
+_ 枚举也就是常量的跳值
+red    = iota 顺序+1的常量
+b  = 1 << (10 * iota)
+text := `dsa""fsa"a
+     dsa
+            fsaf
+   asdg
+
+`
+文本的定义
+
+os.Open(filename) 打开文件
+scanner := bufio.NewScanner(file)
+
+	//没有初始条件和递增条件，相当于while
+	for scanner.Scan() {
+		fmt.Println(scanner.Text())
+	}
+
+	另一种阅读文件的方式
+
+	if byte, error := ioutil.ReadFile("test.txt"); error != nil {
+    		fmt.Println(error)
+    	} else {
+    		fmt.Printf("%s\n", byte)
+    	}
