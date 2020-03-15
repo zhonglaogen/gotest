@@ -12,20 +12,25 @@ func main() {
 	s := "YES我是钟老根！"
 	fmt.Println(len(s))
 	fmt.Printf("%s",[]byte(s))
+	fmt.Println()
 	fmt.Printf("%X",[]byte(s))
 	fmt.Println()
+	fmt.Println("************1***************")
 	for _, b := range []byte(s){
 		fmt.Printf("%X ",b)
 	}
 	fmt.Println()
+	fmt.Println("************2***************")
 	for i, ch := range s { //ch is rune
-		fmt.Printf("%d %X", i, ch)
+		fmt.Printf("%d-%X ", i, ch)
 	}
 	fmt.Println()
+	fmt.Println("************3***************")
 
 	fmt.Println(utf8.RuneCountInString(s))
 
 	fmt.Println()
+	fmt.Println("*************4**************")
 
 	bytes := []byte(s)
 	for len(bytes) > 0{
@@ -33,7 +38,9 @@ func main() {
 		bytes = bytes[size:]
 		fmt.Println(ch)
 		fmt.Printf("%c ", ch)
+		fmt.Println()
 	}
+	fmt.Println("*************5**************")
 	//另外开了一个数组，村这些字符
 	for _, ch := range ([]rune(s)){
 		fmt.Printf("%c", ch)

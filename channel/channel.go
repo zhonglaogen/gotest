@@ -74,7 +74,7 @@ func closeChannel()  {
 	c <- 'a'
 	c <- 'b'
 	c <- 'c'
-	c <- 'd'
+	//c <- 'd'
 	//告诉接收方不发数据了，但是接收方还是可以收到数据的，收到是方框（字符），数字就是0
 	close(c)
 	time.Sleep(time.Millisecond)

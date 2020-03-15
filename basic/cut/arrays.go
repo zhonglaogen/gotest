@@ -19,16 +19,17 @@ func change2(arry []int) {
 
 //定长数组，变长切片
 func main() {
+	//切片
 	var arry1 = []int{1, 2, 3}
 	var arry [5]int
 	//这样必须赋值
 	arry2 := [5]int{2, 3, 4, 5, 6}
 	//编译器数几个值
-	  arry3 := [...]int{2, 3, 4, 5, 7}
+	arry3 := [...]int{2, 3, 4, 5, 7}
 
 	var grid [2][3]int
 	fmt.Println(arry, arry2, arry3, grid)
-
+	fmt.Printf("%T",grid)
 	for i := 0; i < len(arry3); i++ {
 		fmt.Println(arry3[i])
 	}

@@ -6,3 +6,7 @@ docker kv8 caddy网站服务器 cockroachdb数据库
 没有对象，没有哪个多态泛型，没有trycache
 有接口，函数式编程，CSP并发模型（goruntime+Channel）
 https://studygolang.com/
+
+go get github.com/gpmgo/gopm
+无法访问goole的服务器，通过这个访问，用go get 网址 获取第三方的库
+gopm通过网络镜像来拿包

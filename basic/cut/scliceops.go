@@ -1,4 +1,4 @@
-package basic
+package main
 
 import "fmt"
 
@@ -36,7 +36,7 @@ func main() {
 
 
 	fmt.Println("copy slice")
-	//把s1的值copy给s1
+	//把s1的值copy给s2
 	copy(s2,s1)
 	printSlice(s2)
 
