@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"zlx.com/laogen/gotest/retriever/mock"
 	real2 "zlx.com/laogen/gotest/retriever/real"
+	"time"
 )
 
 //duck typing python是运行时检验，c++是编译时检验（template），java是继承
@@ -55,15 +56,24 @@ func main() {
 	fmt.Printf("%T %v\n", r, r)
 	r = mock.Retriever{"继承类"}
 	fmt.Printf("%T %v\n", r, r)
+
+	fmt.Println("----------1--------------")
 	//接口通常不用指针，因为接口内部都含有一个指针
-	r = &real2.Retriever{}
+	r = &real2.Retriever{
+		UserAgent:"xxx",
+		TimeOut:time.Minute,
+	}
 	fmt.Printf("%T %v\n", r, r)
 	//fmt.Println(download(r))
 	fmt.Println(download(mock.Retriever{"啦啦啦"}))
 
+	fmt.Println("----------2--------------")
+
 	//type assertion，通过.括号取出体内的类型
 	realRetriever := r.(*real2.Retriever)
 	fmt.Println(realRetriever.UserAgent)
+
+	fmt.Println("-----------3-------------")
 
 	//防止报错，优雅的写
 	if realRetriever2, ok := r.(mock.Retriever);ok{
@@ -75,6 +85,7 @@ func main() {
 	r = mock.Retriever{"测试重写string方法"}
 	inspect(r)
 	fmt.Println("try session")
+	fmt.Println("-----------4-------------")
 	s := mock.Retriever{"AABB 组合测试"}
 	fmt.Println(session(s))
 }

@@ -17,6 +17,8 @@ func (myNode *myTreeNode)postOrder()  {
 	if myNode == nil  || myNode.node == nil{
 		return
 	}
+	//这样使用会报错，myTreeNode{myNode.node.Left}也就是literal传的是指针，这样传的就不是指针了
+	//myTreeNode{myNode.node.Left}.postOrder()
 	left := myTreeNode{myNode.node.Left}
 	left.postOrder()
 	right := myTreeNode{myNode.node.Right}
