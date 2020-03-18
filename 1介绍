@@ -1,0 +1,8 @@
+docker kv8 caddy网站服务器 cockroachdb数据库
+针对其他语言痛点
+并发编程
+大数据，微服务，并发而生的编程语言
+
+没有对象，没有哪个多态泛型，没有trycache
+有接口，函数式编程，CSP并发模型（goruntime+Channel）
+https://studygolang.com/

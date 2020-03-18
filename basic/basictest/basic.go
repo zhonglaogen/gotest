@@ -229,5 +229,9 @@ func main() {
 
 	priintFile("test.txt")
 
+	z := '但'
+
+	fmt.Printf("%d",z)
+
 	//forever()
 }

@@ -1,0 +1,2 @@
+//type assertion，通过.括号取出体内的类型
+	realRetriever := r.(*real2.Retriever)
