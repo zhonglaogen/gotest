@@ -13,7 +13,7 @@ func doWorker(id int, w worker) {
 		//	break
 		//}
 		fmt.Printf("worker %d is receive %c\n", id, n)
-		//第二次大写的会卡在这里没人收
+		//第一次大会卡在这里没人收,此线程是阻塞的,第二次就没法收到了,死锁
 		//go func() {done <- true}()
 		w.done()
 
@@ -34,9 +34,7 @@ type worker struct {
 func createWorker(id int, wg *sync.WaitGroup) worker {
 	w := worker{
 		in:   make(chan int),
-		done : func() {
-			wg.Done()
-		},
+		done : wg.Done,
 	}
 	//每个线程只能拥有把一条Channel
 	go doWorker(id, w)

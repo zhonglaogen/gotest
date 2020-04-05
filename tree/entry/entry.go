@@ -44,6 +44,7 @@ func main() {
 
 	//nil指针可以传进去
 	var pRoot *tree.Node
+	fmt.Println("===========" ,pRoot == nil)
 	pRoot.SetValue(100)
 	pRoot = &root
 	pRoot.SetValue(300)

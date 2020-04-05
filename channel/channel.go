@@ -84,7 +84,7 @@ func main() {
 	//csp模型，并发模型，不用通过共享内存来通信，要通过通信来共享内存
 
 	//传递Channel
-	//chanDemo()
+	chanDemo()
 	//缓冲区Channel
 	//bufferChannel()
 	//Channelclose，用range收

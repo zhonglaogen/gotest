@@ -46,7 +46,7 @@ func main() {
 		fmt.Println(v)
 	}
 
-	change(arry2)
+	change3(&arry2)
 	fmt.Println(arry2[0])
 	change2(arry1)
 	fmt.Println(arry1[0])

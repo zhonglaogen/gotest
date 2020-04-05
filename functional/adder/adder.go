@@ -17,7 +17,8 @@ type iAdder func(int) (int, iAdder)
 func adder2(base int) iAdder  {
 
 	return func(v int) (int, iAdder) {
-		return base +v, adder2(base)
+		base += v
+		return base, adder2(base)
 	}
 }
 
@@ -30,5 +31,6 @@ func main() {
 	aa := adder2(0)
 	var s int
 	s, aa = aa(1)
+	s ,aa = aa(1)
 	fmt.Println(s)
 }
